@@ -9,8 +9,10 @@
 import fs from "fs";
 import cron from "node-cron";
 import 'dotenv/config'
-const API_KEY = "SECRET_KEY";
-const CITY = "Zurich";
+
+const API_KEY = process.env.API_KEY;
+const CITY = process.env.CITY
+
 const URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
 async function getWeather() {
     try {
