@@ -2,8 +2,9 @@
   "name": "weather_api",
   "version": "1.0.0",
   "description": "use weather api and processing data",
-  "main": "index.js",
+  "main": "weather.js",
   "scripts": {
+    "start": "node weather.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/rico-coder/Weather_API#readme",
   "private": true,
+  "type": "module",
   "dependencies": {
     "dotenv": "^17.2.3",
     "node-cron": "^4.2.1",
