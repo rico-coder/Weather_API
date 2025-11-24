@@ -8,7 +8,8 @@
 
 import fs from "fs";
 import cron from "node-cron";
-const API_KEY = "d9036dc4fe7af4138023b340ca53b248";
+import 'dotenv/config'
+const API_KEY = "SECRET_KEY";
 const CITY = "Zurich";
 const URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
 async function getWeather() {
@@ -38,6 +39,6 @@ async function getWeather() {
 // RUN IMMEDIATELY ON STARTUP
 getWeather();
 cron.schedule("0 * * * *", () => {
-    console.log(":hourglass_flowing_sand: Running hourly weather fetch…");
+    console.log("Running hourly weather fetch…");
     getWeather();
 });
